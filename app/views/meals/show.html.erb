@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @meal.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @meal.image %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @meal.category %>
+</p>
+
+<p>
+  <strong>Toppings:</strong>
+  <%= @meal.toppings %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @meal.string %>
+</p>
+
+<%= link_to 'Edit', edit_meal_path(@meal) %> |
+<%= link_to 'Back', meals_path %>
