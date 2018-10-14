@@ -1,33 +1,38 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
-<h1>Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Intro</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.image %></td>
-        <td><%= event.intro %></td>
-        <td><%= event.content %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+<h1>Események</h1>
+<ul class="list-group list-group-flush">
+  <% @events.each do |event| %>
+  <li class="list-group-item">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= event.title %>
+        </h5>
+        <p class="card-text">
+          <%= event.intro %>
+        </p>
+        <%= link_to 'Tovább', event, class: 'btn btn-primary btn-sm' %>
+        <p class="card-text text-right"><small class="text-muted">
+            <%= event.created_at %></small></p>
+      </div>
+    </div>
+  </li>
+  <!--
+<div>
+  <td>
+    <%= link_to 'Show', event %>
+  </td>
+  <td>
+    <%= link_to 'Edit', edit_event_path(event) %>
+  </td>
+  <td>
+    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</div>
+-->
+  <% end %>
+</ul>
+<%= link_to 'Új esemény', new_event_path %>

@@ -10,8 +10,8 @@
   <div class="card-body">
     <h5 class="card-title"><%= article.title %></h5>
     <p class="card-text"><%= article.intro %></p>
-    <!-- TODO -->
     <%= link_to 'Tovább', article, class: 'btn btn-primary btn-sm' %>
+    <p class="card-text text-right"><small class="text-muted"><%= article.created_at %></small></p>
   </div>
 </div>
 </li>
