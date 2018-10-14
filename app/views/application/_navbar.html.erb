@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <%= link_to '<img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> Vörös Kakas Fogadó'.html_safe, "/", :class => "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <%= link_to "Hírek", articles_path, :class => "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Szendvicsek", meals_path, :class => "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Események", events_path, :class => "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <!-- TODO -->
+                <a class="nav-link" href="#">Galéria</a>
+            </li>
+            <li class="nav-item">
+                <!-- TODO -->
+                <a class="nav-link" href="#">Archívum</a>
+            </li>
+            <li class="nav-item">
+                <!-- TODO -->
+                <%= link_to "Rólunk", "pages/about", :class => "nav-link" %>
+            </li>
+        </ul>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button">Bejelentkezés</button>
+    </div>
+</nav>
