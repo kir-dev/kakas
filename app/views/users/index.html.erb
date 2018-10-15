@@ -1,37 +1,26 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
-<h1>Users</h1>
+<h1>A csapat</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Auth sch</th>
-      <th>Mail</th>
-      <th>Admin</th>
-      <th>Image</th>
-      <th>Introduction</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="card-deck">
+  <% @users.each do |user| %>
+  <div class="col-lg-4 col-md-5">
+  <div class="card">
+    <!-- <%= user.image %> -->
+    <img class="card-img-top" src="http://placekitten.com/350/300" alt="User image">
+    <div class="card-body">
+      <h5 class="card-title text-center">
+        <%= user.name %>
+      </h5>
+      <p class="card-text text-center">
+        <%= user.introduction %>
+      </p>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.auth_sch_id %></td>
-        <td><%= user.mail %></td>
-        <td><%= user.admin %></td>
-        <td><%= user.image %></td>
-        <td><%= user.introduction %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Új tag felvétele', new_user_path %>

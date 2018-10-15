@@ -12,17 +12,20 @@
  *
  */
 
+$primary: #F70000;
+
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "articles";
 @import "categories";
 @import "events";
 @import "meals";
 @import "pages";
-@import "posts";
+@import "photos";
 @import "scaffolds";
 @import "users";
 @import "bootstrap";
 
 body {
     margin-top: 5rem;
+    margin-bottom: 2rem;
 }
