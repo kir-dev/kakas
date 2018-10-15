@@ -4,7 +4,7 @@ class CreateMeals < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :image
       t.references :category, foreign_key: true
-      t.string :toppings
+      t.text :toppings
 
       t.timestamps
     end
