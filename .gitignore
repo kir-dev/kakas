@@ -28,3 +28,5 @@
 
 # Ignore environment variables
 .env
+
+.tool-versions
