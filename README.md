@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kir-dev/kakas.svg?branch=master)](https://travis-ci.org/kir-dev/kakas)
+
 # Kakas
 
 ## How to install 
