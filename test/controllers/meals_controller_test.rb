@@ -17,7 +17,7 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create meal" do
     assert_difference('Meal.count') do
-      post meals_url, params: { meal: { category_id: @meal.category_id, image: @meal.image, name: @meal.name, string: @meal.string, toppings: @meal.toppings } }
+      post meals_url, params: { meal: { category_id: @meal.category_id, image: @meal.image, name: @meal.name, toppings: @meal.toppings } }
     end
 
     assert_redirected_to meal_url(Meal.last)
