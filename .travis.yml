@@ -5,4 +5,5 @@ services:
   - mysql
 before_install:
   - gem install bundler -v 1.17.1
+before_script:
   - mysql -e 'CREATE DATABASE kakas_test;'
