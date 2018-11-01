@@ -34,7 +34,7 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update meal" do
-    patch meal_url(@meal), params: { meal: { category_id: @meal.category_id, image: @meal.image, name: @meal.name, string: @meal.string, toppings: @meal.toppings } }
+    patch meal_url(@meal), params: { meal: { category_id: @meal.category_id, image: @meal.image, name: @meal.name, toppings: @meal.toppings } }
     assert_redirected_to meal_url(@meal)
   end
 
