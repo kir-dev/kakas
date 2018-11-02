@@ -2,11 +2,11 @@
 
 # Kakas
 
-## How to install 
+## Instructions for development
 
 * install ruby 2.3.4
 * install mysql
-* configure mysql user `root` with password `root`
+* add a mysql user `rails_user` with a password of `password`
 * `gem install bundler`
 * `bundle install`
 * `rails db:setup`
