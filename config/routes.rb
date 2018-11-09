@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :photos
   resources :meals
-  resources :posts
   resources :categories
   resources :users
   resources :pages
