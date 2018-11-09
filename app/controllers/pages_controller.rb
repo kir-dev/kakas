@@ -40,7 +40,6 @@ class PagesController < ApplicationController
   end
 
   # DELETE /pages/1
-  # DELETE /pages/1.json
   def destroy
     @page.destroy
     redirect_to pages_url, notice: 'Page was successfully destroyed.'

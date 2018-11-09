@@ -30,7 +30,6 @@ class CategoriesController < ApplicationController
   end
 
   # PATCH/PUT /categories/1
-  # PATCH/PUT /categories/1.json
   def update
     if @category.update(category_params)
       redirect_to @category, notice: 'Category was successfully updated.'
