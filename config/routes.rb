@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :photos
   resources :meals
   resources :categories
-  resources :users
   resources :pages
   resources :events
   resources :articles
