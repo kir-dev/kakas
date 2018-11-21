@@ -1,5 +1,8 @@
 {
   "name": "kakas",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.5.0"
+  }
 }
