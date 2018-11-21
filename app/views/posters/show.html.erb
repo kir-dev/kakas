@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @poster.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @poster.image %>
+</p>
+
+<%= link_to 'Edit', edit_poster_path(@poster) %> |
+<%= link_to 'Back', posters_path %>

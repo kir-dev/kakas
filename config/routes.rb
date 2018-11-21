@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :photos
+  resources :posters
   resources :meals
   resources :categories
   resources :pages
