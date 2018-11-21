@@ -1,55 +1,12 @@
 <h1>Galéria</h1>
 
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posters.each do |poster| %>
-    <tr>
-      <td>
-        <%= poster.name %>
-      </td>
-      <td>
-        <%= poster.image %>
-      </td>
-      <td>
-        <%= link_to 'Show', poster %>
-      </td>
-      <td>
-        <%= link_to 'Edit', edit_poster_path(poster) %>
-      </td>
-      <td>
-        <%= link_to 'Destroy', poster, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table> -->
-
-
-
-<!-- <div class="images">
-  <% @posters.each do |poster| %>
-  <figure class="figure">
-    <img class="figure-img img-fluid rounded" src="<%= poster.image %>">
-    <figcaption class="figure-caption">
-      <%= poster.name %>
-    </figcaption>
-    <% end %>
-  </figure>
-</div> -->
-
 <div class="images">
     <% @posters.each do |poster| %>
-    
-      <img class="gallery-image" src="<%= poster.image %>">
-      <% end %>
+      <%= image_tag poster.image.url(:thumb) if poster.image? %>
+      <%= link_to 'Show', poster %>
+      <%= link_to 'Edit', edit_poster_path(poster) %>
+      <%= link_to 'Destroy', poster, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </div>
 
 
