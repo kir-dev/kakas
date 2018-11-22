@@ -3,6 +3,12 @@
 </h1>
 
 <p>
+  <em>
+    <%= @event.created_at %>
+  </em>
+</p>
+
+<p>
   <strong>
     <%= @event.intro %>
   </strong>
@@ -12,4 +18,4 @@
   <%= @event.content %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %>
+<%= link_to 'Szerkesztés', edit_event_path(@event), class: 'btn btn-secondary' %>

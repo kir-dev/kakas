@@ -1,34 +1,19 @@
 <h1>Események</h1>
-<ul class="list-group list-group-flush">
-  <% @events.each do |event| %>
-  <li class="list-group-item">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">
-          <%= event.title %>
-        </h5>
-        <p class="card-text">
-          <%= event.intro %>
-        </p>
-        <%= link_to 'Tovább', event, class: 'btn btn-primary btn-sm' %>
-        <p class="card-text text-right"><small class="text-muted">
-            <%= event.created_at %></small></p>
-      </div>
+<% if current_user&.admin? %>
+  <%= link_to 'Új esemény', new_event_path, class: 'btn btn-secondary btn-sm' %>
+<% end %>
+<% @events.each do |event| %>
+  <div class="card mt-3 d-flex flex-row">
+    <%= image_tag event.image.url(:thumb) if event.image? %>
+    <div class="card-body">
+      <h5 class="card-title"><%= event.title %></h5>
+      <p class="card-text"><%= event.intro %></p>
+      <%= link_to 'Tovább', event, class: 'btn btn-primary btn-sm' %>
+      <% if current_user&.admin? %>
+        <%= link_to 'Szerkesztés', edit_event_path(event), class: 'btn btn-secondary btn-sm' %>
+        <%= link_to 'Törlés', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      <% end %>
+      <p class="card-text text-right"><small class="text-muted"><%= event.created_at %></small></p>
     </div>
-  </li>
-  <!--
-<div>
-  <td>
-    <%= link_to 'Show', event %>
-  </td>
-  <td>
-    <%= link_to 'Edit', edit_event_path(event) %>
-  </td>
-  <td>
-    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </td>
-</div>
--->
-  <% end %>
-</ul>
-<%= link_to 'Új esemény', new_event_path %>
+  </div>
+<% end %>
