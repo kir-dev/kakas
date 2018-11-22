@@ -1,30 +1,19 @@
-<!-- TODO: show article image in the list -->
 <h1>Hírek</h1>
-<ul class="list-group list-group-flush">
-<% @articles.each do |article| %>
-<li class="list-group-item">
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title"><%= article.title %></h5>
-    <p class="card-text"><%= article.intro %></p>
-    <%= link_to 'Tovább', article, class: 'btn btn-primary btn-sm' %>
-    <p class="card-text text-right"><small class="text-muted"><%= article.created_at %></small></p>
-  </div>
-</div>
-</li>
-<!--
-<div>
-  <td>
-    <%= link_to 'Edit', edit_article_path(article) %>
-  </td>
-  <td>
-    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </td>
-</div>
--->
-<% end %>
 <% if current_user&.admin? %>
-  <p>asdfasdf</p>
+  <%= link_to 'Új hír', new_article_path, class: 'btn btn-secondary btn-sm' %>
 <% end %>
-</ul>
-<%= link_to 'Új hír', new_article_path %>
+<% @articles.each do |article| %>
+  <div class="card mt-3 d-flex flex-row">
+    <%= image_tag article.image.url(:thumb) if article.image? %>
+    <div class="card-body">
+      <h5 class="card-title"><%= article.title %></h5>
+      <p class="card-text"><%= article.intro %></p>
+      <%= link_to 'Tovább', article, class: 'btn btn-primary btn-sm' %>
+      <% if current_user&.admin? %>
+        <%= link_to 'Szerkesztés', edit_article_path(article), class: 'btn btn-secondary btn-sm' %>
+        <%= link_to 'Törlés', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      <% end %>
+      <p class="card-text text-right"><small class="text-muted"><%= article.created_at %></small></p>
+    </div>
+  </div>
+<% end %>

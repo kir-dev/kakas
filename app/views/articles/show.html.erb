@@ -1,7 +1,11 @@
 <h1>
   <%= @article.title %>
 </h1>
-
+<p>
+  <em>
+    <%= @article.created_at %>
+  </em>
+</p>
 <p>
   <strong>
     <%= @article.intro %>
@@ -12,4 +16,6 @@
   <%= @article.content %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %>
+<% if current_user&.admin? %>
+  <%= link_to 'Szerkesztés', edit_article_path(@article), class: 'btn btn-secondary' %>
+<% end %>
