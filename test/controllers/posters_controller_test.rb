@@ -1,48 +1,48 @@
 require 'test_helper'
 
-class PhotosControllerTest < ActionDispatch::IntegrationTest
+class PostersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @photo = photos(:one)
+    @poster = posters(:one)
   end
 
   test "should get index" do
-    get photos_url
+    get posters_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_photo_url
+    get new_poster_url
     assert_response :success
   end
 
-  test "should create photo" do
-    assert_difference('Photo.count') do
-      post photos_url, params: { photo: { name: @photo.name, url: @photo.image } }
+  test "should create poster" do
+    assert_difference('Poster.count') do
+      post posters_url, params: { poster: { name: @poster.name, url: @poster.image } }
     end
 
-    assert_redirected_to photo_url(Photo.last)
+    assert_redirected_to poster_url(Poster.last)
   end
 
-  test "should show photo" do
-    get photo_url(@photo)
+  test "should show poster" do
+    get poster_url(@poster)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_photo_url(@photo)
+    get edit_poster_url(@poster)
     assert_response :success
   end
 
-  test "should update photo" do
-    patch photo_url(@photo), params: { photo: { name: @photo.name, url: @photo.image } }
-    assert_redirected_to photo_url(@photo)
+  test "should update poster" do
+    patch poster_url(@poster), params: { poster: { name: @poster.name, url: @poster.image } }
+    assert_redirected_to poster_url(@poster)
   end
 
-  test "should destroy photo" do
-    assert_difference('Photo.count', -1) do
-      delete photo_url(@photo)
+  test "should destroy poster" do
+    assert_difference('Poster.count', -1) do
+      delete poster_url(@poster)
     end
 
-    assert_redirected_to photos_url
+    assert_redirected_to posters_url
   end
 end
