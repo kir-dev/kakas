@@ -22,7 +22,7 @@
         </ul>
         <% if user_signed_in? %>
             <div class="btn-group dropleft">
-                <button class="btn btn-secondary dropdown-toogle" type="button" data-toggle="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toogle" type="button" data-toggle="dropdown">
                     <%= current_user.email %>
                 </button>
                 <div class="dropdown-menu">
@@ -31,10 +31,10 @@
                 </div>
             </div>
         <% else %>
-            <div class="btn-group">
-                <a class="btn dropdown-toogle" type="button", data-toggle="dropdown" href="#">
+            <div class="btn-group dropleft">
+                <button class="btn btn-outline-secondary dropdown-toogle" type="button", data-toggle="dropdown" href="#">
                     Bejelentkezés
-                </a>
+                </button>
                 <div class="dropdown-menu">
                     <%= link_to "Bejelentkezés", new_user_session_path, :class => "dropdown-item" %>
                     <%= link_to "Regisztráció", new_user_registration_path, :class => "dropdown-item" %>

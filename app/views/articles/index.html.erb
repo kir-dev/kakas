@@ -23,5 +23,8 @@
 </div>
 -->
 <% end %>
+<% if current_user&.admin? %>
+  <p>asdfasdf</p>
+<% end %>
 </ul>
 <%= link_to 'Új hír', new_article_path %>
