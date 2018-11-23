@@ -1,5 +1,6 @@
 class PostersController < ApplicationController
   before_action :set_poster, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, except: [:index, :show]
 
   # GET /posters
   def index
