@@ -1,5 +1,5 @@
 <h1>Hírek</h1>
-<% if current_user&.admin? %>
+<% if admin? %>
   <%= link_to 'Új hír', new_article_path, class: 'btn btn-secondary btn-sm' %>
 <% end %>
 <% @articles.each do |article| %>
@@ -9,7 +9,7 @@
       <h5 class="card-title"><%= article.title %></h5>
       <p class="card-text"><%= article.intro %></p>
       <%= link_to 'Tovább', article, class: 'btn btn-primary btn-sm' %>
-      <% if current_user&.admin? %>
+      <% if admin? %>
         <%= link_to 'Szerkesztés', edit_article_path(article), class: 'btn btn-secondary btn-sm' %>
         <%= link_to 'Törlés', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
       <% end %>

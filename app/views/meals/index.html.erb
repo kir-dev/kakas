@@ -22,5 +22,6 @@
 </div>
 
 <br>
-
-<%= link_to 'Új szendvics', new_meal_path %>
+<% if admin? %>
+  <%= link_to 'Új szendvics', new_meal_path %>
+<% end %>

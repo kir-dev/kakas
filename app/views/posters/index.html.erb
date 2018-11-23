@@ -4,12 +4,15 @@
     <% @posters.each do |poster| %>
       <%= image_tag poster.image.url(:thumb) if poster.image? %>
       <%= link_to 'Show', poster %>
-      <%= link_to 'Edit', edit_poster_path(poster) %>
-      <%= link_to 'Destroy', poster, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if admin? %>
+        <%= link_to 'Edit', edit_poster_path(poster) %>
+        <%= link_to 'Destroy', poster, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     <% end %>
   </div>
 
-
 <br>
 
-<%= link_to 'New Poster', new_poster_path %>
+<% if admin? %>
+  <%= link_to 'New Poster', new_poster_path %>
+<% end %>
