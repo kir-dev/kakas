@@ -19,6 +19,16 @@
             <li class="nav-item">
                 <%= link_to "Galéria", posters_path, :class => "nav-link" %>
             </li>
+            <% if admin? %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <%= link_to "Kategóriák", categories_path, :class => "dropdown-item" %>
+                    </div>
+                </li>
+            <% end %>
         </ul>
         <% if user_signed_in? %>
             <div class="btn-group dropleft">
