@@ -12,15 +12,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
     get new_page_url
-    assert_response :success
-  end
-
-  test "should create page" do
-    assert_difference('Page.count') do
-      post pages_url, params: { page: { content: @page.content, name: @page.name, title: @page.title } }
-    end
-
-    assert_redirected_to page_url(Page.last)
+    assert_response :redirect
   end
 
   test "should show page" do
@@ -30,19 +22,19 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get edit" do
     get edit_page_url(@page)
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should update page" do
     patch page_url(@page), params: { page: { content: @page.content, name: @page.name, title: @page.title } }
-    assert_redirected_to page_url(@page)
+    assert_redirected_to root_url
   end
 
   test "should destroy page" do
-    assert_difference('Page.count', -1) do
+    assert_difference('Page.count', 0) do
       delete page_url(@page)
     end
 
-    assert_redirected_to pages_url
+    assert_redirected_to root_url
   end
 end

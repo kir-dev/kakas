@@ -12,15 +12,7 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
     get new_meal_url
-    assert_response :success
-  end
-
-  test "should create meal" do
-    assert_difference('Meal.count') do
-      post meals_url, params: { meal: { category_id: @meal.category_id, image: @meal.image, name: @meal.name, toppings: @meal.toppings } }
-    end
-
-    assert_redirected_to meal_url(Meal.last)
+    assert_response :redirect
   end
 
   test "should show meal" do
@@ -30,19 +22,19 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get edit" do
     get edit_meal_url(@meal)
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should update meal" do
     patch meal_url(@meal), params: { meal: { category_id: @meal.category_id, image: @meal.image, name: @meal.name, toppings: @meal.toppings } }
-    assert_redirected_to meal_url(@meal)
+    assert_redirected_to root_url
   end
 
   test "should destroy meal" do
-    assert_difference('Meal.count', -1) do
+    assert_difference('Meal.count', 0) do
       delete meal_url(@meal)
     end
 
-    assert_redirected_to meals_url
+    assert_redirected_to root_url
   end
 end
