@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'users/index'
   devise_for :users
   resources :posters
   resources :meals
@@ -7,6 +8,9 @@ Rails.application.routes.draw do
   resources :events
   resources :articles
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  match '/users',   to: 'users#index',   via: 'get'
+
   get '/', to: 'articles#index'
   root to: redirect('/')
 end

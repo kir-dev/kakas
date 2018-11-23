@@ -1,0 +1,6 @@
+<h1>Felhasználók</h1>
+<!-- TODO: list name, image and introduction in a nice formatted way -->
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <%= user.email %><br/>
+<% end %>
