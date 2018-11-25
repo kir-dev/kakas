@@ -17,23 +17,3 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
-$(document).ready(function() {
-  var windowsize = $(window).width();
-
-  if (windowsize >= 992) {
-    $(".btn-group").removeClass("dropright").addClass("dropleft")
-  } else {
-    $(".btn-group").removeClass("dropleft").addClass("dropright")
-  }
-})
-
-$(window).resize(function() {
-  var windowsize = $(window).width();
-
-  if (windowsize >= 992) {
-    $(".btn-group").removeClass("dropright").addClass("dropleft")
-  } else {
-    $(".btn-group").removeClass("dropleft").addClass("dropright")
-  }
-})

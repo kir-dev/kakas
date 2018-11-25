@@ -34,21 +34,21 @@
             <% end %>
         </ul>
         <% if user_signed_in? %>
-            <div class="btn-group dropleft">
-                <button class="btn btn-outline-secondary dropdown-toogle" type="button" data-toggle="dropdown">
-                    <%= current_user.email %>
-                </button>
-                <div class="dropdown-menu">
+            <div class="nav-item dropdown">
+                <a class="btn btn-outline-secondary nav-link dropdown-toogle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= current_user.username %>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
                     <%= link_to "Profilom", edit_user_registration_path, :class => "dropdown-item" %>
                     <%= link_to "Kijelentkezés", destroy_user_session_path, method: :delete, :class => "dropdown-item" %>
                 </div>
             </div>
         <% else %>
-            <div class="btn-group dropleft">
-                <button class="btn btn-outline-secondary dropdown-toogle" type="button", data-toggle="dropdown" href="#">
+            <div class="nav-item dropdown">
+                <a class="btn btn-outline-secondary nav-link dropdown-toogle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Bejelentkezés
-                </button>
-                <div class="dropdown-menu">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
                     <%= link_to "Bejelentkezés", new_user_session_path, :class => "dropdown-item" %>
                     <%= link_to "Regisztráció", new_user_registration_path, :class => "dropdown-item" %>
                 </div>
