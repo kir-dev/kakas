@@ -33,3 +33,10 @@ meals = Meal.create([
     category: finom_category
   }
 ])
+
+user = User.new
+user.email = 'test@example.com'
+user.username = 'Teszt Elek'
+user.password = 'valid_password'
+user.password_confirmation = 'valid_password'
+user.save!
