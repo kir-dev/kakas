@@ -1,6 +1,8 @@
-<h1>Felhasználók</h1>
+<h1>A csapat</h1>
 <!-- TODO: list name, image and introduction in a nice formatted way -->
 <% @users = User.all %>
 <% @users.each do |user| %>
-  <%= user.email %><br/>
+  <%= image_tag user.image.url(:thumb) if user.image? %><br />
+  <%= user.username %><br />
+  <%= user.introduction %><br />
 <% end %>
