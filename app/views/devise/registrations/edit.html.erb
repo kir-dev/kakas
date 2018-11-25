@@ -23,7 +23,11 @@
     <%= f.hidden_field :image_cache %>
   </div>
 
-  <%= image_tag current_user.image.url if current_user.image? %>
+  <%= image_tag current_user.image.url(:thumb) if current_user.image? %>
+  <% if current_user.image? %>
+    <p><%= f.label :remove_image %>
+    <%= f.check_box :remove_image %></p>
+  <% end %>
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
