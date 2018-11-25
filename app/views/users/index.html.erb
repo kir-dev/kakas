@@ -1,8 +1,13 @@
 <h1>A csapat</h1>
-<!-- TODO: list name, image and introduction in a nice formatted way -->
 <% @users = User.all %>
-<% @users.each do |user| %>
-  <%= image_tag user.image.url(:thumb) if user.image? %><br />
-  <%= user.username %><br />
-  <%= user.introduction %><br />
-<% end %>
+<div class="card-columns">
+  <% @users.each do |user| %>
+    <div class="card">
+      <%= image_tag user.image.url(:thumb), :class => "card-img-top" if user.image? %>
+      <div class="card-body">
+        <h5 class="card-title"><%= user.username %></h5>
+        <p class="card-text"><%= user.introduction %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
