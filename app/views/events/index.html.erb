@@ -13,7 +13,7 @@
         <%= link_to 'Szerkesztés', edit_event_path(event), class: 'btn btn-secondary btn-sm' %>
         <%= link_to 'Törlés', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
       <% end %>
-      <p class="card-text text-right"><small class="text-muted"><%= event.created_at %></small></p>
+      <p class="card-text text-right"><small class="text-muted"><%= time_ago_in_words event.created_at %></small></p>
     </div>
   </div>
 <% end %>
