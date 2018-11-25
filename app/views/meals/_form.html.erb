@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :category_id, 'Kategória'%>
-    <%= form.collection_select :category_id, Category.all, :id, :name, {}, {class: "custom-select"} %>
+    <%= form.collection_select :category_id, @categories, :id, :name, {}, {class: "custom-select"} %>
   </div>
 
   <div class="field">

@@ -1,4 +1,7 @@
 <h1>Szendvicsek</h1>
+<% if admin? %>
+  <%= link_to 'Új szendvics', new_meal_path, :class => 'btn btn-secondary' %>
+<% end %>
 
 <div class="card-deck">
     <% @meals.each do |meal| %>
@@ -16,12 +19,15 @@
             <%= meal.toppings %>
           </p>
         </div>
+        <% if admin? %>
+          <div class="card-footer">
+            <%= link_to 'Szerkesztés', edit_meal_path(meal) %> | 
+            <%= link_to 'Törlés', meal, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
       </div>
     </div>
     <% end %>
 </div>
 
 <br>
-<% if admin? %>
-  <%= link_to 'Új szendvics', new_meal_path %>
-<% end %>

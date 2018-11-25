@@ -2,11 +2,17 @@
 
 <div class="images">
     <% @posters.each do |poster| %>
-      <%= image_tag poster.image.url(:thumb) if poster.image? %>
-      <%= link_to 'Show', poster %>
+      <figure class="figure">
+        <%= link_to poster do %>
+          <%= image_tag poster.image.url(:thumb), :class => "figure-img" if poster.image? %>
+        <% end %>
+        <figcaption class="figure-caption">
+          <%= poster.name %>
+        </figcaption>
+      </figure>
       <% if admin? %>
-        <%= link_to 'Edit', edit_poster_path(poster) %>
-        <%= link_to 'Destroy', poster, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Szerkesztés', edit_poster_path(poster) %>
+        <%= link_to 'Törlés', poster, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     <% end %>
   </div>
@@ -14,5 +20,5 @@
 <br>
 
 <% if admin? %>
-  <%= link_to 'New Poster', new_poster_path %>
+  <%= link_to 'Új poszter', new_poster_path %>
 <% end %>

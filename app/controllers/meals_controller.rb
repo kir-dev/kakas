@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
   before_action :require_admin, except: [:index, :show]
+  before_action :get_categories, only: [:new, :edit]
 
   # GET /meals
   def index
@@ -55,5 +56,9 @@ class MealsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
       params.require(:meal).permit(:name, :image, :category_id, :toppings)
+    end
+
+    def get_categories
+      @categories = Category.all
     end
 end

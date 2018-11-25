@@ -1,22 +1,22 @@
 <p>
-  <strong>Name:</strong>
+  <strong>Név:</strong>
   <%= @meal.name %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>Kép:</strong>
   <%= @meal.image %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @meal.category %>
+  <strong>Kategória:</strong>
+  <%= @meal.category.name %>
 </p>
 
 <p>
-  <strong>Toppings:</strong>
+  <strong>Feltétek:</strong>
   <%= @meal.toppings %>
 </p>
 
-<%= link_to 'Edit', edit_meal_path(@meal) %> |
-<%= link_to 'Back', meals_path %>
+<%= link_to 'Szerkesztés', edit_meal_path(@meal) %> |
+<%= link_to 'Vissza', meals_path %>
