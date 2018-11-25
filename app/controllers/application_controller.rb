@@ -9,10 +9,11 @@ class ApplicationController < ActionController::Base
   def require_admin
     redirect_to root_url unless current_user&.admin?
   end
+  helper_method :require_admin
 
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:username, :email, :password, 
-      :password_confirmation, :current_password, :image, :image_cache, :remove_image) }
+      :password_confirmation, :current_password, :image, :image_cache, :remove_image, :introduction) }
   end
 end
