@@ -5,12 +5,12 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true %>
   </div>
 
   <div class="field">
     <p><%= f.label :username, "Name" %><br />
-    <%= f.text_field :username %></p>
+    <%= f.text_field :username, :required => true %></p>
   </div>
 
   <div class="field">
