@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   resources :events
   resources :articles
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  
   match '/users',   to: 'users#index',   via: 'get'
-
+  
   get '/', to: 'articles#index'
   root to: redirect('/')
+
+  get 'errors/not_found'
+  match '/404', :to => 'errors#not_found', :via => :all
 end

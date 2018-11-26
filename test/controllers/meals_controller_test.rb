@@ -17,7 +17,7 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show meal" do
     get meal_url(@meal)
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should get edit" do
