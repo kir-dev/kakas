@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, except: [:index, :show]
+  before_action :require_admin, except: [:index]
   before_action :get_categories, only: [:new, :edit]
 
   # GET /meals
