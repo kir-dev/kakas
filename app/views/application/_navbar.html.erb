@@ -20,7 +20,10 @@
                 <%= link_to "Galéria", posters_path, :class => "nav-link" %>
             </li>
             <li class="nav-item">
-                <%= link_to "Rólunk", users_path, :class => "nav-link" %>
+                <%= link_to "Rólunk", "/pages/about", :class=> "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Csapatunk", "/team", :class => "nav-link" %>
             </li>
             <% if admin? %>
                 <li class="nav-item dropdown">
