@@ -1,16 +1,11 @@
-<p>
-  <strong>Cím:</strong>
+<h1>
   <%= @page.title %>
-</p>
+</h1>
 
 <p>
-  <strong>Név:</strong>
-  <%= @page.name %>
-</p>
-
-<p>
-  <strong>Tartalom:</strong>
   <%= @page.content %>
 </p>
 
-<%= link_to 'Szerkesztés', edit_page_path(@page) %>
+<% if admin? %>
+  <%= link_to 'Szerkesztés', edit_page_path(@page) %>
+<% end%>
