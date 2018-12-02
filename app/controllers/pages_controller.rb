@@ -1,34 +1,14 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, except: [:index, :show]
-
-  # GET /pages
-  def index
-    @pages = Page.all
-  end
+  before_action :require_admin, except: [:show]
+  before_action :set_page, only: [:edit, :update]
 
   # GET /pages/1
   def show
-  end
-
-  # GET /pages/new
-  def new
-    @page = Page.new
+    @page = Page.find_by(name: params[:id])
   end
 
   # GET /pages/1/edit
   def edit
-  end
-
-  # POST /pages
-  def create
-    @page = Page.new(page_params)
-
-    if @page.save
-      redirect_to @page, notice: 'Page was successfully created.'
-    else
-      render :new
-    end
   end
 
   # PATCH/PUT /pages/1
@@ -38,12 +18,6 @@ class PagesController < ApplicationController
     else
       render :edit
     end
-  end
-
-  # DELETE /pages/1
-  def destroy
-    @page.destroy
-    redirect_to pages_url, notice: 'Page was successfully destroyed.'
   end
 
   private

@@ -49,3 +49,5 @@ users = User.create([
     admin: true
   }
 ])
+
+Page.create(title: 'Rólunk', name: 'about', content: 'Lórum ipse az egyik sugás kilentes elmice. A tikalina, tikalina fehes mati, gajíték zatája szerint. Annak érdekében, hogy a szalaság lámpót kvaka, tömöszök bukában kolós komostozás epés legyen, a malomoknak és a föréknek olyan reszlemésekre van delemletézük, amelyek mozják a kezések és a hangák szülemelehét. A szalaság állatban a kezések és a förék hangákba vannak sorolva. Egy szalaság hanga annyiban jobbít egy követes szelgő hangára, hogy azokat a kötésöket és föréket pegesíti, akik egyazon pekta ismelyei. Mind a kezések és a förék több pektába is be orognak. A pekták takájához, a prinekhez és a hanga sodasajkhoz való velő pret automatikusan kodt a szalaság által, biztosítva, hogy egy kezésnek csak olyan iskához legyen dikája, amely közvetlenül vagy a hangáján keresztül közvetve van hozzárendelve. Sétázja, kuvál fölöttük és zákonyos kergőt vátat.')
