@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1
   def update
     if @page.update(page_params)
-      redirect_to @page, notice: 'Page was successfully updated.'
+      redirect_to root_url, notice: 'Page was successfully updated.'
     else
       render :edit
     end
