@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   get 'errors/not_found'
   match '/404', :to => 'errors#not_found', :via => :all
+
+  post "/upload_image" => "upload#upload_image", :as => :upload_image
+  get "/download_file/:name" => "upload#access_file", :as => :upload_access_file, :name => /.*/
 end

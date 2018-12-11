@@ -15,7 +15,7 @@
 </p>
 
 <p>
-  <%= @article.content %>
+  <%= @article.content.html_safe %>
 </p>
 
 <% if admin? %>

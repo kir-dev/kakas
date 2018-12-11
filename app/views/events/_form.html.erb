@@ -28,10 +28,20 @@
 
   <div class="field form-group">
     <%= form.label :content, 'Tartalom' %>
-    <%= form.text_area :content, class: 'form-control' %>
+    <%= form.text_area :content, id: 'editor' %>
   </div>
 
   <div class="actions">
     <%= form.submit 'Mentés', class: 'btn btn-secondary' %>
   </div>
 <% end %>
+
+<script>
+  $('#editor').froalaEditor({
+    imageUploadURL: '/upload_image',
+ 
+    imageUploadParams: {
+      id: 'event_editor'
+    }
+  });
+</script>

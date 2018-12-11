@@ -23,10 +23,20 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, id: 'editor' %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  $('#editor').froalaEditor({
+    imageUploadURL: '/upload_image',
+ 
+    imageUploadParams: {
+      id: 'article_editor'
+    }
+  });
+</script>
