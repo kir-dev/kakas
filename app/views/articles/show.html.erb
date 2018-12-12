@@ -14,9 +14,9 @@
   </strong>
 </p>
 
-<p>
+<div class="fr-view">
   <%= @article.content.html_safe %>
-</p>
+</div>
 
 <% if admin? %>
   <%= link_to 'Szerkesztés', edit_article_path(@article), class: 'btn btn-secondary' %>
