@@ -2,8 +2,10 @@ language: ruby
 rvm:
   - 2.5.3
 services:
-  - mysql
+  - postgresql
 before_install:
   - gem install bundler -v 1.17.1
 before_script:
-  - mysql -e 'CREATE DATABASE kakas_test;'
+  - psql -c 'create user "kakas" with superuser password '\''kakas'\'';' -U postgres
+  - psql -c 'create database "kakas";' -U postgres
+  - psql -c 'create database "kakas_test";' -U postgres

@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_105853) do
+ActiveRecord::Schema.define(version: 2018_12_12_232242) do
 
-  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
     t.string "title"
     t.string "image"
     t.text "intro"
@@ -21,13 +24,13 @@ ActiveRecord::Schema.define(version: 2018_11_25_105853) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "image"
     t.text "intro"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_105853) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.bigint "category_id"
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_105853) do
     t.index ["category_id"], name: "index_meals_on_category_id"
   end
 
-  create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "pages", force: :cascade do |t|
     t.string "title"
     t.string "name"
     t.text "content"
@@ -54,14 +57,14 @@ ActiveRecord::Schema.define(version: 2018_11_25_105853) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "posters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "posters", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -71,11 +74,11 @@ ActiveRecord::Schema.define(version: 2018_11_25_105853) do
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
     t.string "image"
-    t.string "username"
+    t.string "name"
     t.text "introduction"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "meals", "categories"

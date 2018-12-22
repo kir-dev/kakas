@@ -6,15 +6,14 @@
 
 ### Setup database
 
-#### Install mysql
+#### Install postgresql
 
-* `$ apt install mysql-server libmysqlclient-dev`
+* `$ apt install postgresql libpq-dev`
 
-#### In a mysql terminal:
+#### In your terminal:
 
-* `> CREATE DATABASE kakas_development;`
-* `> CREATE DATABASE kakas_test;`
-* `> GRANT ALL PRIVILEGES ON kakas_development.* TO 'rails_user'@'localhost' IDENTIFIED BY 'password';`
+* `$ sudo su postgres`
+* `$ psql -c 'create user "kakas" with superuser password '\''kakas'\'';'`
 
 ### Install nodejs
 
@@ -32,10 +31,10 @@
 
 * `$ bundle install`
 
-* `$ rails db:setup`
+### Init database
 
-> It may display an error because of how travis is connected to the test database.
-> If you don't want to run tests locally, you can ignore this
+* `$ rails db:setup`
+* `$ rails db:seed`
 
 ### Launch the application
 

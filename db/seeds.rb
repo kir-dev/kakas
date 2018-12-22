@@ -37,13 +37,13 @@ Meal.create([
 users = User.create([
   {
     email: 'test@example.com',
-    username: 'Teszt Elek',
+    name: 'Teszt Elek',
     password: 'valid_password',
     password_confirmation: 'valid_password'
   },
   {
     email: 'admin@example.com',
-    username: 'Fontos Ember',
+    name: 'Fontos Ember',
     password: 'secure_password',
     password_confirmation: 'secure_password',
     admin: true
