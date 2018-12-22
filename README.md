@@ -1,6 +1,7 @@
 # Kakas
 
 [![Build Status](https://travis-ci.org/kir-dev/kakas.svg?branch=master)](https://travis-ci.org/kir-dev/kakas)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2fcd2ebbc9a0626fd8cd/maintainability)](https://codeclimate.com/github/kir-dev/kakas/maintainability)
 
 ## Setting up the development environment
 
