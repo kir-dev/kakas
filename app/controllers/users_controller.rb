@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:update, :edit]
 
   def index
+    @users = User.all
+    @page = Page.find_by(name: 'about')
   end
 
   def update
@@ -23,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   private
-
     def set_user
       @user = User.find(params[:id])
     end
