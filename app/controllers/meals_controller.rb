@@ -8,10 +8,6 @@ class MealsController < ApplicationController
     @meals = Meal.all
   end
 
-  # GET /meals/1
-  def show
-  end
-
   # GET /meals/new
   def new
     @meal = Meal.new
