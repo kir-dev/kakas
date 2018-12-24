@@ -1,4 +1,4 @@
-<h1>
+<h1 class="title is-1">
   <%= @page.title %>
 </h1>
 
@@ -7,5 +7,5 @@
 </div>
 
 <% if admin? %>
-  <%= link_to 'Szerkesztés', edit_page_path(@page), class: 'btn btn-secondary' %>
+  <%= link_to 'Szerkesztés', edit_page_path(@page), class: 'button is-secondary' %>
 <% end%>

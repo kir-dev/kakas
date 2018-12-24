@@ -12,26 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, 'Név' %>
-    <%= form.text_field :name, class: 'form-control' %>
+    <%= form.label :name, "Név", :class => "label" %>
+    <%= form.text_field :name, :class => "input" %>
   </div>
 
   <div class="field">
-    <%= form.label :image, 'Kép' %>
+    <%= form.label :image, "Kép", :class => "label" %>
     <%= form.file_field :image %>
   </div>
 
   <div class="field">
-    <%= form.label :category_id, 'Kategória'%>
-    <%= form.collection_select :category_id, @categories, :id, :name, {}, {class: "custom-select"} %>
+    <%= form.label :category_id, "Kategória", :class => "label" %>
+    <div class="control">
+      <div class="select">
+        <%= form.collection_select :category_id, @categories, :id, :name, {}, {} %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :toppings, 'Feltétek' %>
-    <%= form.text_field :toppings, class: 'form-control' %>
+    <%= form.label :toppings, "Feltétek", :class => "label" %>
+    <%= form.text_field :toppings, :class => "input" %>
   </div>
 
   <div class="actions">
-    <%= form.submit 'Mentés' %>
+    <%= form.submit "Mentés", :class => "button is-primary" %>
   </div>
 <% end %>

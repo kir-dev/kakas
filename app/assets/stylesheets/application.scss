@@ -12,9 +12,8 @@
  *
  */
 
-$primary: #F70000;
+@import "bulma";
 
-// Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "articles";
 @import "categories";
 @import "events";
@@ -22,13 +21,13 @@ $primary: #F70000;
 @import "pages";
 @import "posters";
 @import "scaffolds";
-@import "bootstrap";
 
 @import "froala_editor.min";
 @import "froala_style.min";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+/* Froala plugins */
 @import 'plugins/char_counter.min.css';
 @import 'plugins/code_view.min.css';
 @import 'plugins/colors.min.css';
@@ -41,7 +40,18 @@ $primary: #F70000;
 @import 'plugins/special_characters.min.css';
 @import 'plugins/table.min.css';
 
+/* Sticky footer */
 body {
-    margin-top: 5rem;
-    margin-bottom: 2rem;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    main {
+        margin-right: 1em;
+        margin-left: 1em;
+        flex: 1;
+    }
+    footer {
+        margin-top: 1em;
+    }
 }

@@ -1,4 +1,4 @@
-<h2>
+<h2 class="title is-2">
   <%= @poster.name %>
 </h2>
 
@@ -9,4 +9,3 @@
 <% if admin? %>
   <%= link_to 'Szerkesztés', edit_poster_path(@poster) %> |
 <% end %>
-<%= link_to 'Vissza', posters_path %>

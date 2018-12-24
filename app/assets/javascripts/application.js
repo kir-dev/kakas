@@ -14,8 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery3
-//= require popper
-//= require bootstrap-sprockets
 //= require froala_editor.min.js
 //= require plugins/align.min.js
 //= require plugins/char_counter.min.js
@@ -42,3 +40,12 @@
 //= require plugins/special_characters.min.js
 //= require plugins/url.min.js
 //= require_tree .
+
+$(document).ready(function() {
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function() {
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+  });
+});

@@ -1,4 +1,4 @@
-<h1>
+<h1 class="title is-1">
   <%= @event.title %>
 </h1>
 
@@ -8,16 +8,16 @@
   </em>
 </p>
 
-<p>
-  <strong>
+<article class="message is-small">
+  <div class="message-body">
     <%= @event.intro %>
-  </strong>
-</p>
+  <div>
+</article>
 
 <div class="fr-view">
   <%= @event.content.html_safe %>
 </div>
 
 <% if admin? %>
-  <%= link_to 'Szerkesztés', edit_event_path(@event), class: 'btn btn-secondary' %>
+  <%= link_to 'Szerkesztés', edit_event_path(@event), class: 'button is-secondary' %>
 <% end %>

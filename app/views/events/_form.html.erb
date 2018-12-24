@@ -11,28 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= form.label :title, 'Cím' %>
-    <%= form.text_field :title, class: 'form-control' %>
+  <div class="field">
+    <%= form.label :title, 'Cím', class: 'label' %>
+    <%= form.text_field :title, class: 'input' %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :image, 'Kép' %>
+  <div class="field">
+    <%= form.label :image, 'Kép', :class => 'label' %>
     <%= form.file_field :image %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :intro, 'Bevezető szöveg' %>
-    <%= form.text_field :intro, class: 'form-control' %>
+  <div class="field">
+    <%= form.label :intro, 'Bevezető szöveg', :class => 'label' %>
+    <%= form.text_field :intro, class: 'input' %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :content, 'Tartalom' %>
+  <div class="field">
+    <%= form.label :content, 'Tartalom', :class => 'label' %>
     <%= form.text_area :content, id: 'editor' %>
   </div>
 
   <div class="actions">
-    <%= form.submit 'Mentés', class: 'btn btn-secondary' %>
+    <%= form.submit 'Mentés', class: 'button is-primary' %>
   </div>
 <% end %>
 

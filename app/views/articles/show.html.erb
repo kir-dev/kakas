@@ -1,4 +1,4 @@
-<h1>
+<h1 class="title is-1">
   <%= @article.title %>
 </h1>
 
@@ -8,16 +8,16 @@
   </em>
 </p>
 
-<p>
-  <strong>
+<article class="message is-small">
+  <div class="message-body">
     <%= @article.intro %>
-  </strong>
-</p>
+  </div>
+</article>
 
 <div class="fr-view">
   <%= @article.content.html_safe %>
 </div>
 
 <% if admin? %>
-  <%= link_to 'Szerkesztés', edit_article_path(@article), class: 'btn btn-secondary' %>
+  <%= link_to 'Szerkesztés', edit_article_path(@article), class: 'button is-secondary' %>
 <% end %>
