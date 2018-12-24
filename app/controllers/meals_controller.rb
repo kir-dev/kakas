@@ -22,7 +22,7 @@ class MealsController < ApplicationController
     @meal = Meal.new(meal_params)
 
     if @meal.save
-      redirect_to @meal, notice: 'Meal was successfully created.'
+      redirect_to meals_url, notice: 'Meal was successfully created.'
     else
       render :new
     end
@@ -31,7 +31,7 @@ class MealsController < ApplicationController
   # PATCH/PUT /meals/1
   def update
     if @meal.update(meal_params)
-      redirect_to @meal, notice: 'Meal was successfully updated.'
+      redirect_to meals_url, notice: 'Meal was successfully updated.'
     else
       render :edit
     end
