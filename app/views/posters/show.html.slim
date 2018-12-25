@@ -1,0 +1,7 @@
+h2.title.is-2
+  = @poster.name
+p
+  = image_tag @poster.image.url, width: '80%' if @poster.image?
+- if admin?
+  = link_to 'Szerkesztés', edit_poster_path(@poster)
+  |  | 

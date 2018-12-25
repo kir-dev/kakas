@@ -1,0 +1,14 @@
+h1.title.is-1
+  = @event.title
+p
+  em
+    = time_ago_in_words @event.created_at
+article.message.is-small
+  .message-body
+    = @event.intro
+    div
+
+.fr-view
+  = @event.content.html_safe
+- if admin?
+  = link_to 'Szerkesztés', edit_event_path(@event), class: 'button is-secondary'

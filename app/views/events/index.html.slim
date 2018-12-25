@@ -1,0 +1,26 @@
+h1.title.is-1
+  | Események
+- if admin?
+  = link_to 'Új esemény', new_event_path, class: 'button is-secondary btn-sm'
+- @events.each do |event|
+  article.media
+    figure.media-left
+      p.image.is-128x128
+        = image_tag event.image.url(:thumb) if event.image?
+    .media-content
+      .content
+        h2.title.is-2
+          = event.title
+        = event.intro
+      nav.level.is-mobile
+        .level-left
+          a.level-item
+            = link_to 'Tovább', event, class: 'button is-primary'
+          - if admin?
+            a.level-item
+              = link_to 'Szerkesztés', edit_event_path(event), class: 'button is-warning'
+            a.level-item
+              = link_to 'Törlés', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger'
+    .media-right
+      i
+        = time_ago_in_words event.created_at

@@ -1,0 +1,24 @@
+h1.title.is-1
+  | Szendvicsek
+- if admin?
+  = link_to 'Új szendvics', new_meal_path, :class => 'button is-secondary'
+.row.columns.is-multiline
+  - @meals.each do |meal|
+    .column.is-one-third
+      .card
+        .card-image
+          figure.image.is-4by3
+            = image_tag meal.image.url(:thumb) if meal.image?
+        .card-content
+          .media
+            .media-content
+              p.title.is-4
+                = meal.name
+              span.tag
+                = meal.category.name
+          .content
+            = meal.toppings
+        - if admin?
+          footer.card-footer
+            = link_to 'Szerkesztés', edit_meal_path(meal), class: "card-footer-item"
+            = link_to 'Törlés', meal, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item"

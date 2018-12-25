@@ -1,0 +1,18 @@
+h1.title.is-1
+  | Galéria
+- if admin?
+  = link_to 'Új poszter', new_poster_path
+.columns.is-multiline
+  .column.is-one-quarter-desktop.is-half-tablet
+    - @posters.each do |poster|
+      .card
+        .card-image
+          figure.image.is-3by2
+            = image_tag poster.image.url(:thumb), :class => "figure-img" if poster.image?
+          .card-content.is-overlay.is-clipped
+            span.tag.is-info
+              = poster.name
+        - if admin?
+          footer.card-footer
+            = link_to 'Szerkesztés', edit_poster_path(poster), class: "card-footer-item"
+            = link_to 'Törlés', poster, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item"

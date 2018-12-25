@@ -43,8 +43,10 @@ gem 'devise-i18n'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '4.8.0'
 
-gem "wysiwyg-rails"
-gem "font-awesome-sass"
+gem 'wysiwyg-rails'
+gem 'font-awesome-sass'
+
+gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

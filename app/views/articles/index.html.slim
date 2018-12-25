@@ -1,0 +1,29 @@
+h1.title.is-1
+  | Hírek
+- if admin?
+  = link_to 'Új hír', new_article_path
+- @articles.each do |article|
+  article.media
+    .columns.is-flex-tablet
+      figure.media-left.column.is-one-third
+        p.image
+          = image_tag article.image.url(:thumb) if article.image?
+      .content.column
+        .media-content
+          .content
+            h2.title.is-2
+              = article.title
+            i
+              = time_ago_in_words article.created_at
+            br
+            br
+            = article.intro
+          nav.level.is-mobile
+            .level-left
+              a.level-item
+                = link_to 'Tovább', article, class: 'button is-primary'
+              - if admin?
+                a.level-item
+                  = link_to 'Szerkesztés', edit_article_path(article), class: 'button is-warning'
+                a.level-item
+                  = link_to 'Törlés', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger'

@@ -1,0 +1,12 @@
+h1.title.is-1
+  = @article.title
+p
+  em
+    = time_ago_in_words @article.created_at
+article.message.is-small
+  .message-body
+    = @article.intro
+.fr-view
+  = @article.content.html_safe
+- if admin?
+  = link_to 'Szerkesztés', edit_article_path(@article), class: 'button is-secondary'

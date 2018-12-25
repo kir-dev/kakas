@@ -1,0 +1,60 @@
+h1.title.is-1
+  | Profil szerkesztése
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f|
+  = devise_error_messages!
+  .columns.is-desktop
+    .column
+      .field
+        = f.label :image, "Profilkép", :class => "label"
+        .field
+          = f.file_field :image
+          = f.hidden_field :image_cache
+      = image_tag current_user.image.url  if current_user.image?
+      - if current_user.image?
+        = f.check_box :remove_image, :class => "checkbox"
+        = f.label :remove_image, "Kép törlése", class: "checkbox"
+    .column
+      .field
+        = f.label :email, :class => "label"
+        .control
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        div
+          | Currently waiting confirmation for: 
+          = resource.unconfirmed_email
+      .field
+        p
+          = f.label :name, "Név", :class => "label"
+        .control
+          = f.text_field :name, class: "input"
+      .field
+        = f.label :introduction, "Bemutatkozás", :class => "label"
+        .control
+          = f.text_area :introduction, class: "input"
+      .field
+        = f.label :password, "Jelszó", :class => "label"
+        i
+          | (hagyd üresen, ha nem akarod megváltoztani)
+        .control
+          = f.password_field :password, autocomplete: "new-password", class: "input"
+          - if @minimum_password_length
+            em
+              = @minimum_password_length
+              |  karakter minimum
+      .field
+        = f.label :password_confirmation, "Jelszó megerősítése", :class => "label"
+        .control
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
+      .field
+        = f.label :current_password, "Jelenlegi jelszó", :class => "label"
+        i
+          | (írd be a változtatások mentéséhez)
+        .control
+          = f.password_field :current_password, autocomplete: "current-password", class: "input"
+      .actions
+        = f.submit "Frissítés", class: "button is-info"
+h3.title.is-3
+  | Fiók törlése
+p
+  | Nem boldog? 
+  = button_to "Törlés", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button is-danger"

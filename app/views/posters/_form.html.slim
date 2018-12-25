@@ -1,0 +1,18 @@
+= form_with(model: poster, local: true) do |form|
+  - if poster.errors.any?
+    #error_explanation
+      h2
+        = pluralize(poster.errors.count, "error")
+        |  prohibited this poster from being saved:
+      ul
+        - poster.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :name, :class => "label"
+    = form.text_field :name, :class => "input"
+  .field
+    = form.label :image, :class => "label"
+    = form.file_field :image
+  .actions
+    = form.submit "Mentés", :class => "button is-secondary"
