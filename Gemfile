@@ -38,9 +38,6 @@ gem 'devise-i18n'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '4.8.0'
 
-gem 'bulma-rails', '~> 0.7.2'
-gem 'wysiwyg-rails'
-gem 'font-awesome-sass'
 gem 'slim'
 
 gem 'webpacker', '~> 3.5'

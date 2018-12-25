@@ -12,30 +12,13 @@
  *
  */
 
-@import "bulma";
-
-@import "articles";
-@import "categories";
-@import "events";
-@import "meals";
-@import "pages";
-@import "posters";
-@import "scaffolds";
-
-@import "froala_editor.min";
-@import "froala_style.min";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
-/* Froala plugins */
-@import 'plugins/char_counter.min.css';
-@import 'plugins/code_view.min.css';
-@import 'plugins/colors.min.css';
-@import 'plugins/emoticons.min.css';
-@import 'plugins/file.min.css';
-@import 'plugins/image.min.css';
-@import 'plugins/special_characters.min.css';
-@import 'plugins/table.min.css';
+@import "./stylesheets/articles.scss";
+@import "./stylesheets/categories";
+@import "./stylesheets/events";
+@import "./stylesheets/meals";
+@import "./stylesheets/pages";
+@import "./stylesheets/posters";
+@import "./stylesheets/scaffolds";
 
 /* Sticky footer */
 body {
