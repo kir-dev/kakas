@@ -16,8 +16,6 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -33,9 +31,6 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem "bulma-rails", "~> 0.7.2"
-gem 'jquery-rails'
-
 gem 'devise'
 
 gem 'devise-i18n'
@@ -43,10 +38,12 @@ gem 'devise-i18n'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '4.8.0'
 
+gem 'bulma-rails', '~> 0.7.2'
 gem 'wysiwyg-rails'
 gem 'font-awesome-sass'
-
 gem 'slim'
+
+gem 'webpacker', '~> 3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

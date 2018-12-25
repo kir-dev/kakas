@@ -16,5 +16,3 @@
     = form.text_area :content, id: 'editor'
   .actions
     = form.submit 'Mentés', class: 'button is-primary'
-script
-  |  $('#editor').froalaEditor({ imageUploadURL: '/upload_image', imageUploadParams: { id: 'article_editor' } }); 
