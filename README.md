@@ -32,6 +32,11 @@
 
 * `$ bundle install`
 
+### Install client-side dependencies
+
+* Install yarn on your computer (https://yarnpkg.com/en/docs/install), then run:
+* `$ yarn install`
+
 ### Init database
 
 * `$ rails db:setup`
