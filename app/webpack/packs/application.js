@@ -6,24 +6,8 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import 'bulma';
+import '../src/application.scss';
 
-import 'froala-editor/css/froala_editor.min';
-import 'froala-editor/css/froala_style.min';
-import 'froala-editor/css/plugins/table.min';
-import 'froala-editor/css/plugins/char_counter.min';
-import 'froala-editor/css/plugins/image.min';
-import 'froala-editor/css/plugins/emoticons.min';
-import 'froala-editor/css/plugins/colors.min';
-import 'froala-editor/css/plugins/code_view.min';
-import 'froala-editor/css/plugins/special_characters.min';
-import 'froala-editor/css/plugins/file.min';
-
-import 'froala-editor/js/froala_editor.min';
-import 'froala-editor/js/plugins/code_view.min';
-import 'froala-editor/js/plugins/lists.min';
-
-import 'font-awesome/css/font-awesome.min';
 import 'font-awesome/scss/font-awesome.scss';
 
 import '../src/coffee/articles';
@@ -35,8 +19,6 @@ import '../src/coffee/pages';
 import '../src/coffee/posters';
 import '../src/coffee/upload';
 import '../src/coffee/users';
-
-import '../src/application.scss';
 
 import Rails from 'rails-ujs'
 import Turbolinks from 'turbolinks';
