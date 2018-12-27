@@ -6,6 +6,7 @@
 //= require_tree ./channels
 
 (function() {
+  // eslint-disable-next-line no-unused-expressions
   this.App || (this.App = {});
 
   App.cable = ActionCable.createConsumer();

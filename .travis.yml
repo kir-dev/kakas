@@ -7,15 +7,18 @@ cache:
   yarn: true
   directories:
     - node_modules
+before_install:
+  - gem install bundler -v 1.17.1
 install:
   - bundle install
   - nvm install node
   - node -v
   - npm i -g yarn
   - yarn install
-before_install:
-  - gem install bundler -v 1.17.1
+  - npm i -g eslint
 before_script:
   - psql -c 'create user "kakas" with superuser password '\''kakas'\'';' -U postgres
   - psql -c 'create database "kakas";' -U postgres
   - psql -c 'create database "kakas_test";' -U postgres
+script:
+  - npm run lint
