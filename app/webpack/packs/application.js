@@ -20,7 +20,7 @@ import '../src/coffee/posters';
 import '../src/coffee/upload';
 import '../src/coffee/users';
 
-import Rails from 'rails-ujs'
+import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
 
 Rails.start();
