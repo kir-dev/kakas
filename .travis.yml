@@ -22,3 +22,4 @@ before_script:
   - psql -c 'create database "kakas_test";' -U postgres
 script:
   - npm run lint
+  - bundle exec rake
