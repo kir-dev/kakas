@@ -9,10 +9,10 @@
           li
             = message
   .field
-    = form.label :name, :class => "label"
-    = form.text_field :name, :class => "input"
+    = form.label :name, class: "label"
+    = form.text_field :name, class: "input"
   .field
-    = form.label :image, :class => "label"
+    = form.label :image, class: "label"
     = form.file_field :image
   .actions
-    = form.submit "Mentés", :class => "button is-secondary"
+    = form.submit "Mentés", class: "button is-secondary"

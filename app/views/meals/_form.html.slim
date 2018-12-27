@@ -9,18 +9,18 @@
           li
             = message
   .field
-    = form.label :name, "Név", :class => "label"
-    = form.text_field :name, :class => "input"
+    = form.label :name, "Név", class: "label"
+    = form.text_field :name, class: "input"
   .field
-    = form.label :image, "Kép", :class => "label"
+    = form.label :image, "Kép", class: "label"
     = form.file_field :image
   .field
-    = form.label :category_id, "Kategória", :class => "label"
+    = form.label :category_id, "Kategória", class: "label"
     .control
       .select
         = form.collection_select :category_id, @categories, :id, :name, {}, {}
   .field
-    = form.label :toppings, "Feltétek", :class => "label"
-    = form.text_field :toppings, :class => "input"
+    = form.label :toppings, "Feltétek", class: "label"
+    = form.text_field :toppings, class: "input"
   .actions
-    = form.submit "Mentés", :class => "button is-primary"
+    = form.submit "Mentés", class: "button is-primary"

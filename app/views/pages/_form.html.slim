@@ -9,10 +9,10 @@
           li
             = message
   .field
-    = form.label :title, 'Cím', :class => 'label'
+    = form.label :title, 'Cím', class: 'label'
     = form.text_field :title, class: 'input'
   .field.form-group
-    = form.label :content, 'Tartalom', :class => 'label'
+    = form.label :content, 'Tartalom', class: 'label'
     = form.text_area :content, id: 'editor'
   .actions
     = form.submit 'Mentés', class: 'button is-primary'

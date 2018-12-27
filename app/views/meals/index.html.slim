@@ -1,7 +1,7 @@
 h1.title.is-1
   | Szendvicsek
 - if admin?
-  = link_to 'Új szendvics', new_meal_path, :class => 'button is-secondary'
+  = link_to 'Új szendvics', new_meal_path, class: 'button is-secondary'
 .row.columns.is-multiline
   - @meals.each do |meal|
     .column.is-one-third

@@ -1,21 +1,21 @@
 h1.title.is-1
   | Profil szerkesztése
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f|
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f|
   = devise_error_messages!
   .columns.is-desktop
     .column
       .field
-        = f.label :image, "Profilkép", :class => "label"
+        = f.label :image, "Profilkép", class: "label"
         .field
           = f.file_field :image
           = f.hidden_field :image_cache
       = image_tag current_user.image.url  if current_user.image?
       - if current_user.image?
-        = f.check_box :remove_image, :class => "checkbox"
+        = f.check_box :remove_image, class: "checkbox"
         = f.label :remove_image, "Kép törlése", class: "checkbox"
     .column
       .field
-        = f.label :email, :class => "label"
+        = f.label :email, class: "label"
         .control
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
@@ -24,15 +24,15 @@ h1.title.is-1
           = resource.unconfirmed_email
       .field
         p
-          = f.label :name, "Név", :class => "label"
+          = f.label :name, "Név", class: "label"
         .control
           = f.text_field :name, class: "input"
       .field
-        = f.label :introduction, "Bemutatkozás", :class => "label"
+        = f.label :introduction, "Bemutatkozás", class: "label"
         .control
           = f.text_area :introduction, class: "input"
       .field
-        = f.label :password, "Jelszó", :class => "label"
+        = f.label :password, "Jelszó", class: "label"
         i
           | (hagyd üresen, ha nem akarod megváltoztani)
         .control
@@ -42,11 +42,11 @@ h1.title.is-1
               = @minimum_password_length
               |  karakter minimum
       .field
-        = f.label :password_confirmation, "Jelszó megerősítése", :class => "label"
+        = f.label :password_confirmation, "Jelszó megerősítése", class: "label"
         .control
           = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
       .field
-        = f.label :current_password, "Jelenlegi jelszó", :class => "label"
+        = f.label :current_password, "Jelenlegi jelszó", class: "label"
         i
           | (írd be a változtatások mentéséhez)
         .control

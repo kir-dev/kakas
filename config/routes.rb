@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # get 'users/index'
-  devise_for :users, :path_prefix => 'my'
+  devise_for :users, path_prefix: 'my'
   resources :users
   resources :posters
   resources :meals
@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   root to: redirect('/')
 
   get 'errors/not_found'
-  match '/404', :to => 'errors#not_found', :via => :all
+  match '/404', to: 'errors#not_found', via: :all
 
-  post "/upload_image" => "upload#upload_image", :as => :upload_image
-  get "/download_file/:name" => "upload#access_file", :as => :upload_access_file, :name => /.*/
+  post "/upload_image" => "upload#upload_image", as: :upload_image
+  get "/download_file/:name" => "upload#access_file", as: :upload_access_file, name: /.*/
 end

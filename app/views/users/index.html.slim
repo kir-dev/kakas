@@ -2,7 +2,7 @@ h1.title.is-1
   = @page.title
 = @page.content.html_safe
 br
-= link_to "Szerkesztés", edit_page_path(@page), :class => "button is-primary" if admin?
+= link_to "Szerkesztés", edit_page_path(@page), class: "button is-primary" if admin?
 h2.title.is-2
   | Körtagok
 .row.columns.is-multiline
@@ -11,7 +11,7 @@ h2.title.is-2
       .card.large.round
         .card-image
           figure.image
-            = image_tag user.image.url(:thumb), :class => "card-img-top" if user.image?
+            = image_tag user.image.url(:thumb), class: "card-img-top" if user.image?
         .card-content
           .media
             .media-content

@@ -12,13 +12,13 @@
     = form.label :title, 'Cím', class: 'label'
     = form.text_field :title, class: 'input'
   .field
-    = form.label :image, 'Kép', :class => 'label'
+    = form.label :image, 'Kép', class: 'label'
     = form.file_field :image
   .field
-    = form.label :intro, 'Bevezető szöveg', :class => 'label'
+    = form.label :intro, 'Bevezető szöveg', class: 'label'
     = form.text_field :intro, class: 'input'
   .field
-    = form.label :content, 'Tartalom', :class => 'label'
+    = form.label :content, 'Tartalom', class: 'label'
     = form.text_area :content, id: 'editor'
   .actions
     = form.submit 'Mentés', class: 'button is-primary'

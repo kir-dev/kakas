@@ -3,12 +3,12 @@ h1.title.is-2
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
   .field
-    = f.label :email, :class => "label"
-    = f.email_field :email, autofocus: true, autocomplete: "email", :required => true, :class => "input"
+    = f.label :email, class: "label"
+    = f.email_field :email, autofocus: true, autocomplete: "email", required: true, class: "input"
   .field
     p
-      = f.label :name, "Név", :class => "label"
-      = f.text_field :name, :required => true, :class => "input"
+      = f.label :name, "Név", class: "label"
+      = f.text_field :name, required: true, class: "input"
   .field
     = f.label :password, "Jelszó"
     - if @minimum_password_length
@@ -17,10 +17,10 @@ h1.title.is-2
         = @minimum_password_length
         |  karakter minimum)
     br
-    = f.password_field :password, autocomplete: "new-password", :class => "input"
+    = f.password_field :password, autocomplete: "new-password", class: "input"
   .field
-    = f.label :password_confirmation, "Jelszó megerősítése", :class => "label"
-    = f.password_field :password_confirmation, autocomplete: "new-password", :class => "input"
+    = f.label :password_confirmation, "Jelszó megerősítése", class: "label"
+    = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
   .actions
-    = f.submit "Regisztrálok", :class => "button is-primary"
+    = f.submit "Regisztrálok", class: "button is-primary"
 = render "devise/shared/links"

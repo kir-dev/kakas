@@ -8,7 +8,7 @@ h1.title.is-1
       .card
         .card-image
           figure.image.is-3by2
-            = image_tag poster.image.url(:thumb), :class => "figure-img" if poster.image?
+            = image_tag poster.image.url(:thumb), class: "figure-img" if poster.image?
           .card-content.is-overlay.is-clipped
             span.tag.is-info
               = poster.name

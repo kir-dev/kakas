@@ -5,7 +5,7 @@ h2
   .field
     = f.label :email
     br
-    = f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control"
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
   .actions
     = f.submit "Email küldése"
 = render "devise/shared/links"

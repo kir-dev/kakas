@@ -14,10 +14,10 @@ class UploadController < ApplicationController
  
       File.open(path, "wb") {|f| f.write(params[:file].read)}
       view_file = Rails.root.join("/download_file/", file_name).to_s
-      render :json => {:link => view_file}.to_json
+      render json: {link: view_file}.to_json
  
     else
-      render :text => {:link => nil}.to_json
+      render text: {link: nil}.to_json
     end
   end
  
@@ -27,9 +27,9 @@ class UploadController < ApplicationController
  
   def access_file
     if File.exists?(Rails.root.join("public", "uploads", "files", params[:name]))
-      send_data File.read(Rails.root.join("public", "uploads", "files", params[:name])), :disposition => "attachment"
+      send_data File.read(Rails.root.join("public", "uploads", "files", params[:name])), disposition: "attachment"
     else
-      render :nothing => true
+      render nothing: true
     end
   end
 end
