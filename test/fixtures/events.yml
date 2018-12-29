@@ -5,9 +5,11 @@ one:
   image: MyString
   intro: MyText
   content: MyText
+  event_date: 2018-10-05 18:39:46
 
 two:
   title: MyString
   image: MyString
   intro: MyText
   content: MyText
+  event_date: 2018-10-05 18:39:46

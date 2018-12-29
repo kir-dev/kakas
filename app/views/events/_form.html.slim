@@ -18,6 +18,9 @@
     = form.label :intro, 'Bevezető szöveg', class: 'label'
     = form.text_field :intro, class: 'input'
   .field
+    = form.label :event_date, 'Esemény időpontja', class: 'label'
+    = form.datetime_select :event_date, class: 'select'
+  .field
     = form.label :content, 'Tartalom', class: 'label'
     = form.text_area :content, id: 'editor'
   .actions
