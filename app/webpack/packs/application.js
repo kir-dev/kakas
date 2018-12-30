@@ -10,15 +10,15 @@ import '../src/application.scss';
 
 import 'font-awesome/scss/font-awesome.scss';
 
-import '../src/coffee/articles';
-import '../src/coffee/categories';
-import '../src/coffee/errors';
-import '../src/coffee/events';
-import '../src/coffee/meals';
-import '../src/coffee/pages';
-import '../src/coffee/posters';
-import '../src/coffee/upload';
-import '../src/coffee/users';
+import '../src/js/articles';
+import '../src/js/categories';
+import '../src/js/errors';
+import '../src/js/events';
+import '../src/js/meals';
+import '../src/js/pages';
+import '../src/js/posters';
+import '../src/js/upload';
+import '../src/js/users';
 
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
