@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # get 'users/index'
-  devise_for :users, path_prefix: 'my'
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/register' => 'devise/registrations#new', as: "new_user_registration"
+  end
+  devise_for :users
   resources :users
   resources :posters
   resources :meals

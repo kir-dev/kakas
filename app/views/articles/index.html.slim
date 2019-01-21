@@ -5,10 +5,10 @@ h1.title.is-1
 - @articles.each do |article|
   article.media
     .columns.is-flex-tablet
-      figure.media-left.column.is-one-third
+      figure.media-left.column.is-one-quarter
         p.image
           = image_tag article.image.url(:thumb) if article.image?
-      .content.column
+      .content.column.is-three-quarters
         .media-content
           .content
             h2.title.is-2

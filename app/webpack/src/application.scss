@@ -25,6 +25,8 @@
 @import '~froala-editor/css/plugins/special_characters.min';
 @import '~froala-editor/css/plugins/file.min';
 
+@import './stylesheets/animations';
+
 @import "./stylesheets/articles";
 @import "./stylesheets/categories";
 @import "./stylesheets/events";
@@ -32,7 +34,7 @@
 @import "./stylesheets/pages";
 @import "./stylesheets/posters";
 @import "./stylesheets/scaffolds";
-@import "./stylesheets/users.scss";
+@import "./stylesheets/users";
 
 body {
     display: flex;

@@ -15,7 +15,7 @@ document.addEventListener('turbolinks:load', () => {
   $('#editor').froalaEditor({
     imageUploadURL: '/upload_image',
     imageUploadParams: {
-      id: 'article_editor'
+      id: 'editor'
     }
   });
 });
