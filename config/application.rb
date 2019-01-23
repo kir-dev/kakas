@@ -21,5 +21,10 @@ module Kakas
     config.assets.paths << Rails.root.join('node_modules')
 
     config.exceptions_app = self.routes
+
+    config.generators do |g|
+      g.template_engine :slim
+      g.javascript_engine :js
+    end
   end
 end
